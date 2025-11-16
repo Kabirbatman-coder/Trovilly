@@ -1,0 +1,561 @@
+{
+    "designSystem": {
+      "metadata": {
+        "name": "Portrait.so Design System",
+        "version": "1.0.0",
+        "description": "Extracted visual design system from Portrait website",
+        "extractedDate": "2025-11-16",
+        "aesthetic": "Modern, soft, human-centered with web3 sensibility"
+      },
+      
+      "colorPalette": {
+        "primary": {
+          "main": "#6366F1",
+          "light": "#818CF8",
+          "dark": "#4F46E5",
+          "contrastText": "#FFFFFF"
+        },
+        "accent": {
+          "gradient": "linear-gradient(135deg, #FF6B9D 0%, #FFA06B 25%, #FFD93D 50%, #6BCF7F 75%, #4D9EFF 100%)",
+          "pink": "#FF6B9D",
+          "orange": "#FFA06B",
+          "yellow": "#FFD93D",
+          "green": "#6BCF7F",
+          "blue": "#4D9EFF"
+        },
+        "neutrals": {
+          "white": "#FFFFFF",
+          "gray50": "#F9FAFB",
+          "gray100": "#F3F4F6",
+          "gray200": "#E5E7EB",
+          "gray300": "#D1D5DB",
+          "gray400": "#9CA3AF",
+          "gray500": "#6B7280",
+          "gray600": "#4B5563",
+          "gray700": "#374151",
+          "gray800": "#1F2937",
+          "gray900": "#111827",
+          "black": "#000000"
+        },
+        "semantic": {
+          "success": "#10B981",
+          "warning": "#F59E0B",
+          "error": "#EF4444",
+          "info": "#3B82F6"
+        },
+        "background": {
+          "primary": "#FFFFFF",
+          "secondary": "#F9FAFB",
+          "gradient": "linear-gradient(180deg, rgba(255, 240, 245, 0.3) 0%, rgba(240, 245, 255, 0.3) 50%, rgba(240, 255, 245, 0.3) 100%)",
+          "subtleGradient": "Soft pastel multi-color gradient overlay (pink to blue to green)"
+        }
+      },
+      
+      "typography": {
+        "fontFamilies": {
+          "primary": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif",
+          "display": "System font stack with emphasis on Inter",
+          "monospace": "'SF Mono', 'Monaco', 'Cascadia Code', monospace"
+        },
+        "fontSizes": {
+          "xs": "0.75rem",
+          "sm": "0.875rem",
+          "base": "1rem",
+          "lg": "1.125rem",
+          "xl": "1.25rem",
+          "2xl": "1.5rem",
+          "3xl": "1.875rem",
+          "4xl": "2.5rem",
+          "5xl": "3.5rem",
+          "6xl": "4.5rem",
+          "hero": "5rem"
+        },
+        "fontWeights": {
+          "light": 300,
+          "regular": 400,
+          "medium": 500,
+          "semibold": 600,
+          "bold": 700,
+          "extrabold": 800
+        },
+        "lineHeights": {
+          "tight": 1.1,
+          "snug": 1.3,
+          "normal": 1.5,
+          "relaxed": 1.75,
+          "loose": 2
+        },
+        "textStyles": {
+          "heroTitle": {
+            "fontSize": "4.5rem",
+            "fontWeight": 700,
+            "lineHeight": 1.1,
+            "letterSpacing": "-0.03em",
+            "color": "#111827"
+          },
+          "h1": {
+            "fontSize": "3rem",
+            "fontWeight": 700,
+            "lineHeight": 1.2,
+            "letterSpacing": "-0.02em"
+          },
+          "h2": {
+            "fontSize": "2.25rem",
+            "fontWeight": 700,
+            "lineHeight": 1.3,
+            "letterSpacing": "-0.01em"
+          },
+          "h3": {
+            "fontSize": "1.875rem",
+            "fontWeight": 600,
+            "lineHeight": 1.4
+          },
+          "bodyLarge": {
+            "fontSize": "1.25rem",
+            "fontWeight": 400,
+            "lineHeight": 1.6,
+            "color": "#6B7280"
+          },
+          "body": {
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "lineHeight": 1.5,
+            "color": "#4B5563"
+          },
+          "caption": {
+            "fontSize": "0.875rem",
+            "fontWeight": 400,
+            "lineHeight": 1.4,
+            "color": "#6B7280"
+          },
+          "accentText": {
+            "fontSize": "inherit",
+            "fontStyle": "italic",
+            "fontWeight": 500,
+            "background": "linear-gradient(135deg, #FF6B9D, #4D9EFF)",
+            "backgroundClip": "text",
+            "WebkitBackgroundClip": "text",
+            "WebkitTextFillColor": "transparent"
+          }
+        }
+      },
+      
+      "spacing": {
+        "scale": {
+          "0": "0",
+          "1": "0.25rem",
+          "2": "0.5rem",
+          "3": "0.75rem",
+          "4": "1rem",
+          "5": "1.25rem",
+          "6": "1.5rem",
+          "8": "2rem",
+          "10": "2.5rem",
+          "12": "3rem",
+          "16": "4rem",
+          "20": "5rem",
+          "24": "6rem",
+          "32": "8rem",
+          "40": "10rem"
+        },
+        "layout": {
+          "sectionPaddingY": "5rem",
+          "sectionPaddingX": "1.5rem",
+          "containerMaxWidth": "1280px",
+          "contentMaxWidth": "980px",
+          "gridGap": "2rem"
+        }
+      },
+      
+      "borderRadius": {
+        "none": "0",
+        "sm": "0.25rem",
+        "base": "0.5rem",
+        "md": "0.75rem",
+        "lg": "1rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+        "4xl": "2.5rem",
+        "full": "9999px",
+        "card": "1.5rem",
+        "button": "9999px"
+      },
+      
+      "shadows": {
+        "none": "none",
+        "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "base": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
+        "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+        "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+        "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+        "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        "card": "0 4px 16px rgba(0, 0, 0, 0.08)",
+        "navbar": "0 1px 3px rgba(0, 0, 0, 0.05)"
+      },
+      
+      "components": {
+        "navbar": {
+          "base": {
+            "height": "80px",
+            "padding": "1rem 2rem",
+            "backgroundColor": "rgba(255, 255, 255, 0.8)",
+            "backdropFilter": "blur(12px)",
+            "WebkitBackdropFilter": "blur(12px)",
+            "borderBottom": "1px solid rgba(0, 0, 0, 0.05)",
+            "boxShadow": "0 1px 3px rgba(0, 0, 0, 0.05)",
+            "position": "fixed",
+            "top": 0,
+            "zIndex": 1000
+          },
+          "logo": {
+            "display": "flex",
+            "alignItems": "center",
+            "gap": "0.5rem",
+            "fontSize": "1.25rem",
+            "fontWeight": 600,
+            "color": "#111827"
+          },
+          "links": {
+            "fontSize": "1rem",
+            "fontWeight": 500,
+            "color": "#4B5563",
+            "padding": "0.5rem 1rem",
+            "borderRadius": "0.5rem",
+            "transition": "all 0.2s ease",
+            "hover": {
+              "color": "#111827",
+              "backgroundColor": "rgba(0, 0, 0, 0.05)"
+            }
+          },
+          "badge": {
+            "fontSize": "0.625rem",
+            "fontWeight": 700,
+            "color": "#FF6B9D",
+            "textTransform": "uppercase",
+            "letterSpacing": "0.05em",
+            "marginLeft": "0.25rem"
+          }
+        },
+        
+        "buttons": {
+          "primary": {
+            "background": "linear-gradient(135deg, #FF6B9D, #FFA06B, #FFD93D, #6BCF7F, #4D9EFF)",
+            "color": "#FFFFFF",
+            "padding": "0.875rem 2rem",
+            "borderRadius": "9999px",
+            "fontSize": "1rem",
+            "fontWeight": 600,
+            "border": "none",
+            "boxShadow": "0 4px 16px rgba(0, 0, 0, 0.1)",
+            "transition": "all 0.3s ease",
+            "hover": {
+              "transform": "translateY(-2px)",
+              "boxShadow": "0 8px 24px rgba(0, 0, 0, 0.15)"
+            },
+            "active": {
+              "transform": "translateY(0)"
+            }
+          },
+          "secondary": {
+            "background": "#FFFFFF",
+            "color": "#111827",
+            "padding": "0.875rem 2rem",
+            "borderRadius": "9999px",
+            "fontSize": "1rem",
+            "fontWeight": 600,
+            "border": "1px solid #E5E7EB",
+            "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.05)",
+            "transition": "all 0.2s ease",
+            "hover": {
+              "borderColor": "#D1D5DB",
+              "boxShadow": "0 4px 12px rgba(0, 0, 0, 0.08)"
+            }
+          },
+          "ghost": {
+            "background": "transparent",
+            "color": "#4B5563",
+            "padding": "0.75rem 1.5rem",
+            "borderRadius": "0.75rem",
+            "fontSize": "1rem",
+            "fontWeight": 500,
+            "border": "none",
+            "transition": "all 0.2s ease",
+            "hover": {
+              "backgroundColor": "rgba(0, 0, 0, 0.05)",
+              "color": "#111827"
+            }
+          },
+          "pill": {
+            "background": "rgba(255, 255, 255, 0.9)",
+            "color": "#4B5563",
+            "padding": "0.625rem 1.25rem",
+            "borderRadius": "9999px",
+            "fontSize": "0.875rem",
+            "fontWeight": 500,
+            "border": "1px solid rgba(0, 0, 0, 0.08)",
+            "backdropFilter": "blur(8px)",
+            "WebkitBackdropFilter": "blur(8px)",
+            "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.05)"
+          }
+        },
+        
+        "cards": {
+          "photo": {
+            "borderRadius": "1.5rem",
+            "overflow": "hidden",
+            "boxShadow": "0 8px 24px rgba(0, 0, 0, 0.12)",
+            "transform": "rotate(-3deg)",
+            "transition": "all 0.3s ease",
+            "border": "8px solid #FFFFFF",
+            "hover": {
+              "transform": "rotate(0deg) scale(1.02)",
+              "boxShadow": "0 12px 32px rgba(0, 0, 0, 0.16)"
+            }
+          },
+          "content": {
+            "background": "#FFFFFF",
+            "padding": "2rem",
+            "borderRadius": "1.5rem",
+            "boxShadow": "0 4px 16px rgba(0, 0, 0, 0.08)",
+            "border": "1px solid rgba(0, 0, 0, 0.05)"
+          },
+          "feature": {
+            "background": "rgba(255, 255, 255, 0.6)",
+            "backdropFilter": "blur(12px)",
+            "WebkitBackdropFilter": "blur(12px)",
+            "padding": "2.5rem",
+            "borderRadius": "2rem",
+            "border": "1px solid rgba(255, 255, 255, 0.8)",
+            "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.08)"
+          }
+        },
+        
+        "inputs": {
+          "base": {
+            "padding": "1rem 1.5rem",
+            "fontSize": "1rem",
+            "fontWeight": 400,
+            "borderRadius": "9999px",
+            "border": "1px solid #E5E7EB",
+            "backgroundColor": "#FFFFFF",
+            "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.04)",
+            "transition": "all 0.2s ease",
+            "focusStyle": {
+              "borderColor": "#6366F1",
+              "outline": "2px solid rgba(99, 102, 241, 0.2)",
+              "outlineOffset": "2px",
+              "boxShadow": "0 4px 12px rgba(0, 0, 0, 0.08)"
+            },
+            "placeholderColor": "#9CA3AF"
+          },
+          "urlInput": {
+            "padding": "1.25rem 2rem",
+            "fontSize": "1.125rem",
+            "fontWeight": 400,
+            "borderRadius": "9999px",
+            "border": "1px solid #E5E7EB",
+            "backgroundColor": "#FFFFFF",
+            "boxShadow": "0 4px 16px rgba(0, 0, 0, 0.06)",
+            "prefix": {
+              "color": "#9CA3AF",
+              "fontSize": "1.125rem"
+            }
+          }
+        },
+        
+        "badges": {
+          "label": {
+            "background": "linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(77, 158, 255, 0.1))",
+            "color": "#FF6B9D",
+            "padding": "0.25rem 0.75rem",
+            "borderRadius": "9999px",
+            "fontSize": "0.75rem",
+            "fontWeight": 600,
+            "textTransform": "uppercase",
+            "letterSpacing": "0.05em",
+            "border": "1px solid rgba(255, 107, 157, 0.2)"
+          }
+        }
+      },
+      
+      "layout": {
+        "grid": {
+          "columns": 12,
+          "gap": "2rem",
+          "breakpoints": {
+            "mobile": "640px",
+            "tablet": "768px",
+            "desktop": "1024px",
+            "wide": "1280px",
+            "ultraWide": "1536px"
+          }
+        },
+        "container": {
+          "maxWidth": "1280px",
+          "padding": "0 1.5rem",
+          "centered": true,
+          "margin": "0 auto"
+        },
+        "hero": {
+          "paddingTop": "8rem",
+          "paddingBottom": "6rem",
+          "minHeight": "90vh",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center"
+        },
+        "sections": {
+          "paddingY": "5rem",
+          "paddingX": "1.5rem",
+          "spacing": "8rem"
+        }
+      },
+      
+      "animations": {
+        "transitions": {
+          "fast": "150ms",
+          "base": "200ms",
+          "medium": "300ms",
+          "slow": "400ms",
+          "slower": "600ms"
+        },
+        "easings": {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "spring": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+        },
+        "commonAnimations": {
+          "fadeIn": {
+            "keyframes": "opacity: 0 → 1",
+            "duration": "400ms",
+            "easing": "ease-out"
+          },
+          "slideUp": {
+            "keyframes": "transform: translateY(30px) → translateY(0), opacity: 0 → 1",
+            "duration": "500ms",
+            "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+          },
+          "scaleIn": {
+            "keyframes": "transform: scale(0.95) → scale(1), opacity: 0 → 1",
+            "duration": "400ms",
+            "easing": "ease-out"
+          },
+          "floatPhoto": {
+            "keyframes": "transform: rotate(-3deg) translateY(0) → rotate(-3deg) translateY(-10px)",
+            "duration": "3000ms",
+            "easing": "ease-in-out",
+            "iterationCount": "infinite",
+            "direction": "alternate"
+          }
+        }
+      },
+      
+      "effects": {
+        "glassmorphism": {
+          "background": "rgba(255, 255, 255, 0.7)",
+          "backdropFilter": "blur(12px)",
+          "WebkitBackdropFilter": "blur(12px)",
+          "border": "1px solid rgba(255, 255, 255, 0.8)",
+          "boxShadow": "0 8px 32px rgba(0, 0, 0, 0.08)"
+        },
+        "gradientText": {
+          "background": "linear-gradient(135deg, #FF6B9D, #FFA06B, #4D9EFF)",
+          "WebkitBackgroundClip": "text",
+          "backgroundClip": "text",
+          "WebkitTextFillColor": "transparent"
+        },
+        "softGlow": {
+          "boxShadow": "0 0 40px rgba(99, 102, 241, 0.15)"
+        }
+      },
+      
+      "designPrinciples": {
+        "visualStyle": {
+          "aesthetic": "Modern, playful, human-centered with soft gradients",
+          "visualWeight": "Light and airy",
+          "cornerStyle": "Highly rounded (pill-shaped buttons, large card radius)",
+          "colorApproach": "Gradient-heavy with soft pastels, rainbow accent gradients",
+          "personality": "Warm, approachable, optimistic, personal"
+        },
+        "layoutPatterns": {
+          "alignment": "Center-aligned for hero, mixed for content sections",
+          "whitespace": "Very generous, breathing room emphasized",
+          "hierarchy": "Strong through size contrast and weight",
+          "gridStructure": "Loose and organic, asymmetric photo placement"
+        },
+        "typographyPatterns": {
+          "headlineStyle": "Extra large, bold, tight line-height",
+          "accentWords": "Italic with gradient color treatment",
+          "bodyText": "Medium gray, generous line-height for readability",
+          "contrast": "Dark headlines on light backgrounds with subtle gradient overlays"
+        },
+        "interactionPatterns": {
+          "hoverEffects": [
+            "Subtle lift (translateY)",
+            "Shadow expansion",
+            "Color transitions",
+            "Rotation normalization on photos"
+          ],
+          "buttonStyle": "Pill-shaped with gradient fills",
+          "feedbackStyle": "Smooth, spring-based animations",
+          "microInteractions": "Gentle, playful, physics-based"
+        },
+        "photoTreatment": {
+          "style": "Polaroid-like with white borders",
+          "rotation": "Slight rotation for organic feel (-3deg)",
+          "shadow": "Strong shadow for depth",
+          "corners": "Large border-radius (1.5rem)",
+          "border": "Thick white border (8px)",
+          "hover": "Straighten and slight scale"
+        },
+        "responsiveApproach": {
+          "strategy": "Mobile-first with emphasis on touch targets",
+          "breakpointBehavior": "Fluid with graceful degradation",
+          "navigationPattern": "Always-visible on desktop, likely hamburger on mobile",
+          "contentReflow": "Stack vertically on mobile, asymmetric grid on desktop"
+        },
+        "brandElements": {
+          "gradients": "Rainbow multi-stop gradients (pink→orange→yellow→green→blue)",
+          "accentColor": "Rainbow gradient as primary brand element",
+          "backgroundTexture": "Subtle pastel gradient overlay across entire page",
+          "iconography": "Rounded square with gradient fill for logo",
+          "newBadge": "Bright pink/red 'NEW!' badge with uppercase styling"
+        }
+      },
+      
+      "usageGuidelines": {
+        "dos": [
+          "Use pill-shaped buttons (border-radius: 9999px) for all CTAs",
+          "Apply rainbow gradients to primary actions and accent text",
+          "Rotate photo cards slightly (-3deg) for organic, scrapbook feel",
+          "Use generous whitespace and breathing room between sections",
+          "Apply glassmorphism effect to floating elements (navbar, cards)",
+          "Use italic styling with gradient for emphasized words in headlines",
+          "Maintain soft, pastel background gradients for warmth",
+          "Use thick white borders on photo cards for Polaroid effect",
+          "Apply smooth spring-based animations (cubic-bezier with overshoot)"
+        ],
+        "donts": [
+          "Don't use sharp corners on buttons or primary UI elements",
+          "Don't use single solid colors for primary CTAs - always use gradients",
+          "Don't place photos perfectly straight - add subtle rotation",
+          "Don't use harsh shadows - keep them soft and subtle",
+          "Don't crowd elements - maintain generous spacing",
+          "Don't use pure black text - use dark grays (#111827, #1F2937)",
+          "Don't forget backdrop-filter blur on glassmorphic elements",
+          "Don't use standard hover effects - add playful transforms"
+        ],
+        "keyPatterns": [
+          "Hero sections: Large centered text with gradient accent words",
+          "Photos: White border + rotation + shadow for scrapbook aesthetic",
+          "Buttons: Gradient fill + pill shape + lift on hover",
+          "Navigation: Glassmorphic fixed navbar with blur",
+          "Backgrounds: Subtle multi-color pastel gradients",
+          "Input fields: Pill-shaped with subtle shadows",
+          "Typography: System fonts, bold headlines, italic accents with gradients"
+        ]
+      }
+    }
+  }

@@ -1,0 +1,539 @@
+{
+  "meta": {
+    "name": "Workflow Dashboard Design System",
+    "version": "1.0.0",
+    "source_inspiration": "Single-page project management dashboard with left sidebar navigation, light neon-lime accent, soft cards, and rounded modern UI as in provided screenshot.",
+    "intent": "Give an AI enough structured guidance to recreate this visual style consistently across the entire app."
+  },
+  "principles": [
+    "Clean, bright, and inviting with generous white space and soft rounded shapes.",
+    "High contrast between primary content (cards) and subtly colored background; avoid visual noise.",
+    "Use a limited, consistent color palette built around deep navy and vibrant cyan blues, supported by white and light neutrals.",
+    "Emphasize hierarchy with typography, spacing, and grouping rather than heavy borders.",
+    "Cards and containers should feel like floating panels with soft shadows and large corner radii.",
+    "Icons, avatars, and pills are circular or heavily rounded to reinforce a friendly, modern feel.",
+    "Text must remain highly legible; never place critical text on busy or low-contrast backgrounds.",
+    "Motion and interaction (hover, focus, active) should be subtle: small elevation, soft color shifts, and gentle transitions.",
+    "Use consistent spacing multiples throughout; alignment and rhythm between sections is crucial.",
+    "The layout should be dashboard-like: left navigation rail + main content canvas with responsive behavior."
+  ],
+  "foundations": {
+    "colors": {
+      "palette": {
+        "background_app": "#E9F5FF",
+        "background_surface": "#FFFFFF",
+        "background_muted": "#F4F7FB",
+        "primary": "#0077C8",
+        "primary_strong": "#004A8F",
+        "primary_soft": "#E3F4FF",
+        "secondary": "#00B3D7",
+        "secondary_soft": "#D5F7FF",
+        "accent_warning": "#FFC569",
+        "accent_success": "#32C58D",
+        "accent_info": "#4C8DFF",
+        "border_subtle": "#E1E6F0",
+        "border_light": "#D3D9E8",
+        "text_primary": "#111827",
+        "text_secondary": "#6B7280",
+        "text_muted": "#9CA3AF",
+        "text_on_primary": "#FFFFFF",
+        "text_on_dark": "#FFFFFF",
+        "sidebar_background": "#FFFFFF",
+        "sidebar_active_background": "#E3F4FF",
+        "sidebar_icon_default": "#9CA3AF",
+        "sidebar_icon_active": "#111827",
+        "shadow_soft": "rgba(15, 23, 42, 0.05)",
+        "shadow_medium": "rgba(15, 23, 42, 0.10)"
+      },
+      "usage": {
+        "app_background": "Use background_app as the full viewport background outside the main app window to create the soft light-blue frame.",
+        "app_surface": "Use background_surface for the main app shell and most cards; vary with subtle shadows instead of strong borders.",
+        "sidebar": "Sidebar uses sidebar_background with a subtle right border or shadow, and sidebar_active_background for the currently selected nav item.",
+        "primary_actions": "Primary and high-emphasis UI elements (active tabs, progress bars, selection pills) use primary / primary_strong.",
+        "secondary_elements": "Secondary emphasis items (logo mark, decorative accents, some pills) use secondary and secondary_soft.",
+        "text": "Use text_primary on white or muted backgrounds, text_secondary for secondary information, and text_muted for meta labels or helper text.",
+        "borders": "Use border_subtle for card outlines only when necessary; default is borderless with shadow. Use border_light for dividers inside cards.",
+        "status": "Use accent_success / accent_warning / accent_info for status chips, progress fills, or alerts with soft-tinted backgrounds."
+      }
+    },
+    "typography": {
+      "families": {
+        "primary": "\"Inter\", system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+        "secondary": "\"Inter\", system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+      },
+      "scale": {
+        "display_lg": { "size": 32, "lineHeight": 40, "letterSpacing": -0.4 },
+        "display_md": { "size": 28, "lineHeight": 36, "letterSpacing": -0.3 },
+        "h1": { "size": 24, "lineHeight": 32, "letterSpacing": -0.2 },
+        "h2": { "size": 20, "lineHeight": 28, "letterSpacing": -0.1 },
+        "h3": { "size": 18, "lineHeight": 24, "letterSpacing": -0.05 },
+        "body_lg": { "size": 16, "lineHeight": 24, "letterSpacing": 0 },
+        "body_md": { "size": 14, "lineHeight": 20, "letterSpacing": 0 },
+        "body_sm": { "size": 12, "lineHeight": 18, "letterSpacing": 0.1 },
+        "label": { "size": 11, "lineHeight": 16, "letterSpacing": 0.3 }
+      },
+      "weights": {
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      },
+      "usage": {
+        "app_title": { "token": "display_md", "weight": "bold" },
+        "page_title": { "token": "h1", "weight": "bold" },
+        "section_title": { "token": "h2", "weight": "semibold" },
+        "card_title": { "token": "h3", "weight": "semibold" },
+        "body_primary": { "token": "body_md", "weight": "regular" },
+        "body_secondary": { "token": "body_sm", "weight": "regular" },
+        "meta_label": { "token": "label", "weight": "medium", "transform": "uppercase", "tracking": "wide" },
+        "numbers_kpi": { "token": "h2", "weight": "bold" }
+      }
+    },
+    "spacing": {
+      "scale": {
+        "xxs": 4,
+        "xs": 8,
+        "sm": 12,
+        "md": 16,
+        "lg": 24,
+        "xl": 32,
+        "xxl": 40
+      },
+      "rules": [
+        "Base vertical rhythm uses multiples of 8; avoid arbitrary pixel values.",
+        "Small elements (chips, icons, minibadges) use xxs/xs internal padding.",
+        "Buttons, pills, and tags use sm/md horizontal padding with xs vertical padding.",
+        "Cards use lg padding on desktop; stacked content inside cards uses md spacing.",
+        "Top-level sections in the main content area are separated by xl spacing."
+      ]
+    },
+    "radii": {
+      "none": 0,
+      "sm": 6,
+      "md": 10,
+      "lg": 16,
+      "xl": 24,
+      "pill": 999
+    },
+    "shadows": {
+      "none": "none",
+      "soft": "0 10px 30px rgba(15, 23, 42, 0.06)",
+      "medium": "0 18px 40px rgba(15, 23, 42, 0.10)"
+    },
+    "borders": {
+      "subtle": "1px solid #E5E7F0",
+      "light": "1px solid #DDDFEA"
+    },
+    "layout": {
+      "app_shell": {
+        "maxWidth": 1440,
+        "horizontalPadding": 32,
+        "verticalPadding": 24,
+        "borderRadius": 24,
+        "shadow": "medium"
+      },
+      "sidebar": {
+        "width": 260,
+        "padding": {
+          "top": 24,
+          "horizontal": 20,
+          "bottom": 24
+        },
+        "gap": 16
+      },
+      "content": {
+        "padding": {
+          "top": 24,
+          "horizontal": 32,
+          "bottom": 24
+        },
+        "columnGap": 24,
+        "rowGap": 24
+      }
+    }
+  },
+  "components": {
+    "AppShell": {
+      "description": "Primary framing of the app: soft light-blue background with a centered, rounded, white application window containing sidebar and main content.",
+      "anatomy": [
+        "Outer viewport background plane in neon-lime.",
+        "Centered app window with large-radius corners and drop shadow.",
+        "Two main zones: fixed left sidebar and flexible right content area."
+      ],
+      "layout": {
+        "type": "two_column",
+        "sidebar_width_token": "layout.sidebar.width",
+        "content_flex": 1,
+        "border_radius_token": "layout.app_shell.borderRadius",
+        "shadow_token": "shadows.medium"
+      },
+      "style": {
+        "backgroundColor": "colors.palette.background_app",
+        "surfaceColor": "colors.palette.background_surface"
+      }
+    },
+    "Sidebar": {
+      "description": "Vertical navigation rail with logo, search, navigation groups, and footer summary; sits on a white surface with subtle separation from main content.",
+      "anatomy": [
+        "Top logo row (icon and wordmark).",
+        "Search input.",
+        "Primary nav list (Overview, Projects, Members, Messages, Notifications, Settings).",
+        "Nav item badges for counts.",
+        "Footer project summary block and primary CTA button."
+      ],
+      "layout": {
+        "orientation": "vertical",
+        "section_spacing": "spacing.lg",
+        "nav_item_spacing": "spacing.xs"
+      },
+      "style": {
+        "backgroundColor": "colors.palette.sidebar_background",
+        "borderRight": "borders.subtle",
+        "padding": "layout.sidebar.padding",
+        "activeItemBackground": "colors.palette.sidebar_active_background",
+        "activeItemRadius": "radii.md"
+      },
+      "navItem": {
+        "typography": "foundations.typography.body_md",
+        "iconSize": 18,
+        "leftPadding": 12,
+        "rightPadding": 12,
+        "height": 40,
+        "icons": {
+          "defaultColor": "colors.palette.sidebar_icon_default",
+          "activeColor": "colors.palette.sidebar_icon_active"
+        }
+      }
+    },
+    "Logo": {
+      "description": "Top-left brand lockup with simple geometric mark and wordmark.",
+      "style": {
+        "markShape": "rounded cross or abstract workflow symbol",
+        "markColors": [
+          "colors.palette.secondary",
+          "colors.palette.primary"
+        ],
+        "wordmark": {
+          "font": "typography.families.primary",
+          "size": "typography.scale.body_md",
+          "weight": "semibold",
+          "color": "colors.palette.text_primary",
+          "letterSpacing": 0.1
+        }
+      }
+    },
+    "SearchField": {
+      "description": "Subtle search field in sidebar with leading icon.",
+      "anatomy": [
+        "Rounded container.",
+        "Search icon on the left.",
+        "Placeholder text."
+      ],
+      "style": {
+        "height": 36,
+        "borderRadius": "radii.lg",
+        "backgroundColor": "colors.palette.background_muted",
+        "paddingHorizontal": "spacing.md",
+        "iconColor": "colors.palette.text_muted",
+        "placeholderColor": "colors.palette.text_muted",
+        "font": "typography.body_sm"
+      },
+      "states": {
+        "default": {
+          "border": "transparent",
+          "shadow": "none"
+        },
+        "hover": {
+          "backgroundColor": "#EDF0FB"
+        },
+        "focus": {
+          "backgroundColor": "#FFFFFF",
+          "border": "1px solid #C8CBE0",
+          "shadow": "0 0 0 1px rgba(124, 92, 255, 0.15)"
+        }
+      }
+    },
+    "NavBadge": {
+      "description": "Small circular pill indicating counts for items like Messages or Notifications.",
+      "style": {
+        "shape": "circle",
+        "minWidth": 22,
+        "height": 22,
+        "paddingHorizontal": 6,
+        "backgroundColor": "colors.palette.secondary",
+        "color": "colors.palette.text_on_dark",
+        "font": "typography.body_sm",
+        "fontWeight": "medium"
+      }
+    },
+    "Button": {
+      "description": "High-level actions such as 'Read more', 'Modify', or 'NEW+'. Rounded, minimalist buttons with subtle shadows.",
+      "variants": {
+        "primary": {
+          "backgroundColor": "colors.palette.text_primary",
+          "textColor": "colors.palette.text_on_dark",
+          "border": "none",
+          "shadow": "shadows.soft"
+        },
+        "secondary": {
+          "backgroundColor": "colors.palette.background_surface",
+          "textColor": "colors.palette.text_primary",
+          "border": "borders.subtle",
+          "shadow": "none"
+        },
+        "ghost": {
+          "backgroundColor": "transparent",
+          "textColor": "colors.palette.text_secondary",
+          "border": "none",
+          "shadow": "none"
+        }
+      },
+      "size": {
+        "sm": {
+          "height": 32,
+          "paddingHorizontal": 14,
+          "font": "typography.body_sm"
+        },
+        "md": {
+          "height": 40,
+          "paddingHorizontal": 20,
+          "font": "typography.body_md"
+        }
+      },
+      "shape": {
+        "borderRadius": "radii.lg"
+      }
+    },
+    "Tabs": {
+      "description": "Segmented control used for switching views in the project (Project goals, Team members, Milestones, Tasks, Resources).",
+      "anatomy": [
+        "Pill-shaped container holding tab labels.",
+        "Active tab pill with filled background in primary color.",
+        "Inactive tabs as plain text or subtle background."
+      ],
+      "style": {
+        "containerBackground": "colors.palette.background_muted",
+        "containerRadius": "radii.pill",
+        "tabPaddingHorizontal": 16,
+        "tabPaddingVertical": 8,
+        "tabRadius": "radii.pill",
+        "typography": "typography.body_sm"
+      },
+      "states": {
+        "active": {
+          "backgroundColor": "colors.palette.primary",
+          "textColor": "colors.palette.text_on_primary"
+        },
+        "inactive": {
+          "backgroundColor": "transparent",
+          "textColor": "colors.palette.text_secondary"
+        },
+        "hover": {
+          "backgroundColor": "colors.palette.primary_soft"
+        }
+      }
+    },
+    "ProgressBar": {
+      "description": "Rounded progress meter used for completion rate and budget categories.",
+      "anatomy": [
+        "Background track.",
+        "Filled bar.",
+        "Percentage label."
+      ],
+      "style": {
+        "trackColor": "#EFF1FA",
+        "fillColorPrimary": "colors.palette.primary",
+        "fillColorSecondary": "colors.palette.secondary",
+        "height": 12,
+        "borderRadius": "radii.pill"
+      },
+      "variants": {
+        "small": {
+          "height": 6
+        },
+        "medium": {
+          "height": 12
+        }
+      }
+    },
+    "Avatar": {
+      "description": "Circular avatars for members, often overlapping in a group.",
+      "style": {
+        "shape": "circle",
+        "size_sm": 24,
+        "size_md": 32,
+        "border": "2px solid #FFFFFF",
+        "shadow": "shadows.soft"
+      },
+      "group": {
+        "overlapOffset": 12,
+        "maxVisible": 4,
+        "counterPill": {
+          "backgroundColor": "colors.palette.background_muted",
+          "textColor": "colors.palette.text_secondary",
+          "font": "typography.body_sm"
+        }
+      }
+    },
+    "StatusPill": {
+      "description": "Pill-shaped label for project stage and status (e.g., Operational execution).",
+      "style": {
+        "borderRadius": "radii.pill",
+        "paddingHorizontal": 14,
+        "paddingVertical": 6,
+        "font": "typography.body_sm",
+        "fontWeight": "medium"
+      },
+      "variants": {
+        "primary": {
+          "backgroundColor": "colors.palette.secondary_soft",
+          "textColor": "colors.palette.secondary"
+        },
+        "neutral": {
+          "backgroundColor": "colors.palette.background_muted",
+          "textColor": "colors.palette.text_secondary"
+        }
+      }
+    },
+    "Card": {
+      "description": "Primary content containers for sections like Project overview, Return of investment, Budget, Approvals, etc.",
+      "anatomy": [
+        "Card container with soft shadow and large radius.",
+        "Header row: title, optional meta labels, actions.",
+        "Content body with text, lists, or structured metrics."
+      ],
+      "style": {
+        "backgroundColor": "colors.palette.background_surface",
+        "borderRadius": "radii.lg",
+        "padding": "spacing.lg",
+        "shadow": "shadows.soft",
+        "border": "none"
+      },
+      "header": {
+        "titleTypography": "typography.section_title",
+        "metaTypography": "typography.meta_label",
+        "spacing": "spacing.sm"
+      },
+      "layout": {
+        "verticalSpacing": "spacing.md"
+      }
+    },
+    "StatRow": {
+      "description": "Rows of label + value pairs used in 'Return of investment' and 'Budget' sections.",
+      "anatomy": [
+        "Label (top or left, muted).",
+        "Primary value (right or below, bold).",
+        "Optional secondary label (e.g., units or frequency)."
+      ],
+      "style": {
+        "labelTypography": "typography.body_sm",
+        "labelColor": "colors.palette.text_muted",
+        "valueTypography": "typography.numbers_kpi",
+        "valueColor": "colors.palette.text_primary",
+        "spacingVertical": "spacing.xs"
+      }
+    },
+    "ListItem": {
+      "description": "Simple rows with an icon and text, used in 'Project goals & objectives' and 'Approvals'.",
+      "anatomy": [
+        "Leading icon or bullet.",
+        "Primary label text.",
+        "Optional secondary text below.",
+        "Optional right-side meta or action."
+      ],
+      "style": {
+        "paddingVertical": "spacing.sm",
+        "iconSize": 18,
+        "iconBackgroundColor": "colors.palette.background_muted",
+        "iconRadius": "radii.pill",
+        "primaryTypography": "typography.body_md",
+        "secondaryTypography": "typography.body_sm",
+        "primaryColor": "colors.palette.text_primary",
+        "secondaryColor": "colors.palette.text_secondary",
+        "dividerColor": "colors.palette.border_light"
+      }
+    },
+    "KPIHeader": {
+      "description": "Top project banner section with project title, breadcrumb, completion rate, and right-aligned controls.",
+      "anatomy": [
+        "Breadcrumb text (e.g., 'All projects').",
+        "Project title and meta.",
+        "Completion rate progress pill.",
+        "Overflow / more options icon."
+      ],
+      "style": {
+        "paddingBottom": "spacing.lg",
+        "borderBottom": "none",
+        "titleTypography": "typography.page_title",
+        "breadcrumbTypography": "typography.body_sm",
+        "breadcrumbColor": "colors.palette.text_muted"
+      }
+    },
+    "CompletionPill": {
+      "description": "Rounded capsule displaying completion rate percentage with embedded progress track.",
+      "anatomy": [
+        "Outer pill container.",
+        "Background track within pill.",
+        "Fill representing percentage.",
+        "Numeric percentage label."
+      ],
+      "style": {
+        "backgroundColor": "colors.palette.background_muted",
+        "borderRadius": "radii.pill",
+        "paddingHorizontal": 16,
+        "paddingVertical": 8,
+        "trackHeight": 6,
+        "trackRadius": "radii.pill",
+        "fillColor": "colors.palette.primary",
+        "labelTypography": "typography.body_sm",
+        "labelColor": "colors.palette.text_secondary"
+      }
+    },
+    "Tag": {
+      "description": "Small chips for categories, filters, and inline labels.",
+      "style": {
+        "borderRadius": "radii.pill",
+        "paddingHorizontal": 10,
+        "paddingVertical": 4,
+        "font": "typography.body_sm"
+      },
+      "variants": {
+        "neutral": {
+          "backgroundColor": "colors.palette.background_muted",
+          "textColor": "colors.palette.text_secondary"
+        },
+        "primary": {
+          "backgroundColor": "colors.palette.primary_soft",
+          "textColor": "colors.palette.text_primary"
+        }
+      }
+    },
+    "IconButton": {
+      "description": "Circular icon-only buttons, e.g., overflow / more options in cards.",
+      "style": {
+        "shape": "circle",
+        "size": 32,
+        "backgroundColor": "transparent",
+        "iconColor": "colors.palette.text_secondary",
+        "hoverBackgroundColor": "colors.palette.background_muted",
+        "shadow": "none"
+      }
+    },
+    "FooterSummary": {
+      "description": "Sidebar bottom section summarizing number of projects and providing a primary CTA.",
+      "anatomy": [
+        "Small illustration or icon card.",
+        "Label with count (e.g., 'Projects · 12').",
+        "Primary 'NEW +' button."
+      ],
+      "style": {
+        "backgroundColor": "colors.palette.background_muted",
+        "borderRadius": "radii.lg",
+        "padding": "spacing.md",
+        "typography": "typography.body_sm"
+      }
+    }
+  }
+}
+
+

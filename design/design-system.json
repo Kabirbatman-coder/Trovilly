@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "name": "Trovilly Workflow Design System",
+    "version": "1.0.0",
+    "updated": "2025-11-16",
+    "owner": "Design Ops",
+    "purpose": "Provide an authoritative, machine-readable description of the UI so AI agents can deliver pixel-accurate features without new visual decisions.",
+    "source_of_truth": "All new work must reference this file first; deviations require explicit human approval."
+  },
+  "high_level_guidelines": {
+    "visual_tone": [
+      "Bright, modern dashboard aesthetic with soft gradients of light blue background_app (#E9F5FF) and floating white surfaces.",
+      "Emphasize rounded geometry (radii.lg or larger) and soft drop shadows instead of borders for depth.",
+      "Limit the palette to deep navy and cyan primaries with lime or cyan accents; avoid introducing new hues.",
+      "Maintain generous white space and clear grouping - clutter is a bug."
+    ],
+    "hierarchy_and_spacing": [
+      "Follow an 8px vertical rhythm using spacing tokens exclusively.",
+      "Cards and major sections breathe with spacing.lg padding and spacing.xl gaps between modules.",
+      "Use typography scale plus weight (not color alone) to establish hierarchy."
+    ],
+    "interaction_principles": [
+      "Motion is subtle (150-250 ms easing); rely on elevation or soft color shifts, never large transforms.",
+      "Hover and focus states always add clarity (shadow lift, tint change, visible focus ring #74A2FF/40).",
+      "Icons and buttons keep corner radii >= radii.md; ghost states keep transparent backgrounds until hover."
+    ],
+    "responsiveness": [
+      "App shell max width is 1440px centered; reduce content padding to spacing.md below 1024px.",
+      "Sidebar collapses to a 72px icon rail below 960px - icons centered, tooltips required.",
+      "Cards stack vertically on mobile; preserve spacing.md between stacked cards."
+    ]
+  },
+  "tokens": {
+    "colors": {
+      "background_app": "#E9F5FF",
+      "background_surface": "#FFFFFF",
+      "background_muted": "#F4F7FB",
+      "primary": "#0077C8",
+      "primary_strong": "#004A8F",
+      "primary_soft": "#E3F4FF",
+      "secondary": "#00B3D7",
+      "secondary_soft": "#D5F7FF",
+      "text_primary": "#111827",
+      "text_secondary": "#6B7280",
+      "text_muted": "#9CA3AF",
+      "text_on_primary": "#FFFFFF",
+      "border_subtle": "#E1E6F0",
+      "border_light": "#D3D9E8",
+      "accent_warning": "#FFC569",
+      "accent_success": "#32C58D",
+      "accent_info": "#4C8DFF",
+      "shadow_soft": "rgba(15, 23, 42, 0.05)",
+      "shadow_medium": "rgba(15, 23, 42, 0.10)",
+      "focus_ring": "rgba(116, 162, 255, 0.4)"
+    },
+    "typography": {
+      "family_primary": "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "scale": {
+        "display_lg": { "size": 32, "lineHeight": 40, "letterSpacing": -0.4, "weight": 700 },
+        "display_md": { "size": 28, "lineHeight": 36, "letterSpacing": -0.3, "weight": 700 },
+        "h1": { "size": 24, "lineHeight": 32, "letterSpacing": -0.2, "weight": 600 },
+        "h2": { "size": 20, "lineHeight": 28, "letterSpacing": -0.1, "weight": 600 },
+        "h3": { "size": 18, "lineHeight": 24, "letterSpacing": -0.05, "weight": 600 },
+        "body_lg": { "size": 16, "lineHeight": 24, "weight": 400 },
+        "body_md": { "size": 14, "lineHeight": 20, "weight": 400 },
+        "body_sm": { "size": 12, "lineHeight": 18, "weight": 500 },
+        "label": { "size": 11, "lineHeight": 16, "weight": 600, "transform": "uppercase", "tracking": 0.3 }
+      }
+    },
+    "spacing": { "xxs": 4, "xs": 8, "sm": 12, "md": 16, "lg": 24, "xl": 32, "xxl": 40 },
+    "radii": { "none": 0, "sm": 6, "md": 10, "lg": 16, "xl": 24, "pill": 999 },
+    "shadows": {
+      "none": "none",
+      "soft": "0 10px 30px rgba(15, 23, 42, 0.06)",
+      "medium": "0 18px 40px rgba(15, 23, 42, 0.10)"
+    },
+    "borders": {
+      "subtle": "1px solid #E5E7F0",
+      "light": "1px solid #DDDFEA"
+    }
+  },
+  "layout_patterns": {
+    "app_shell": {
+      "max_width": 1440,
+      "outer_background": "colors.background_app",
+      "surface_radius": "radii.xl",
+      "surface_shadow": "shadows.medium",
+      "padding_horizontal": "spacing.xl",
+      "padding_vertical": "spacing.lg"
+    },
+    "sidebar": {
+      "width": 260,
+      "padding": { "top": 24, "horizontal": 20, "bottom": 24 },
+      "section_gap": "spacing.lg",
+      "divider_color": "colors.border_subtle",
+      "collapsed_width": 72
+    },
+    "content_grid": {
+      "column_gap": "spacing.lg",
+      "row_gap": "spacing.lg",
+      "max_columns": 12,
+      "card_min_width": 320
+    }
+  },
+  "components": {
+    "AppShell": {
+      "structure": ["viewport background", "centered shell", "sidebar", "content"],
+      "style": {
+        "background": "colors.background_app",
+        "surface": "colors.background_surface",
+        "radius": "radii.xl",
+        "shadow": "shadows.medium"
+      }
+    },
+    "Sidebar": {
+      "background": "colors.background_surface",
+      "border_right": "borders.subtle",
+      "nav_item": {
+        "height": 40,
+        "radius": "radii.md",
+        "padding": { "x": 12 },
+        "icon_size": 18,
+        "typography": "tokens.typography.scale.body_md",
+        "default": { "text": "colors.text_secondary", "icon": "#9CA3AF" },
+        "active": { "background": "colors.primary_soft", "text": "colors.text_primary", "icon": "colors.text_primary" }
+      },
+      "search": "SearchField"
+    },
+    "SearchField": {
+      "height": 36,
+      "radius": "radii.lg",
+      "background": "colors.background_muted",
+      "padding_x": "spacing.md",
+      "typography": "tokens.typography.scale.body_sm",
+      "states": {
+        "default": { "border": "transparent" },
+        "hover": { "background": "#EDF0FB" },
+        "focus": { "background": "colors.background_surface", "border": "1px solid #C8CBE0", "shadow": "0 0 0 2px colors.focus_ring" }
+      }
+    },
+    "NavBadge": {
+      "min_width": 22,
+      "height": 22,
+      "shape": "circle",
+      "background": "colors.secondary",
+      "color": "colors.text_on_primary",
+      "font": "tokens.typography.scale.body_sm",
+      "font_weight": 600
+    },
+    "Button": {
+      "radius": "radii.lg",
+      "sizes": {
+        "sm": { "height": 32, "padding_x": 14, "font": "tokens.typography.scale.body_sm" },
+        "md": { "height": 40, "padding_x": 20, "font": "tokens.typography.scale.body_md" }
+      },
+      "variants": {
+        "primary": { "background": "colors.primary", "text": "colors.text_on_primary", "shadow": "shadows.soft" },
+        "secondary": { "background": "colors.background_surface", "text": "colors.text_primary", "border": "borders.subtle" },
+        "ghost": { "background": "transparent", "text": "colors.text_secondary" }
+      },
+      "states": {
+        "hover": { "lift": 2, "shadow": "shadows.medium", "background_shift": "tint +5%" },
+        "focus": { "ring": "0 0 0 2px colors.focus_ring" },
+        "disabled": { "background": "#F0F2F8", "text": "colors.text_muted", "shadow": "none" }
+      }
+    },
+    "Tabs": {
+      "container_background": "colors.background_muted",
+      "container_radius": "radii.pill",
+      "tab_radius": "radii.pill",
+      "padding": { "vertical": 8, "horizontal": 16 },
+      "typography": "tokens.typography.scale.body_sm",
+      "states": {
+        "active": { "background": "colors.primary", "text": "colors.text_on_primary" },
+        "inactive": { "background": "transparent", "text": "colors.text_secondary" }
+      }
+    },
+    "ProgressBar": {
+      "track_color": "#EFF1FA",
+      "fill_primary": "colors.primary",
+      "fill_secondary": "colors.secondary",
+      "radius": "radii.pill",
+      "sizes": { "small": 6, "medium": 12 }
+    },
+    "Avatar": {
+      "shape": "circle",
+      "sizes": { "sm": 24, "md": 32 },
+      "border": "2px solid #FFFFFF",
+      "shadow": "shadows.soft",
+      "group": { "overlap": 12, "max": 4, "counter_background": "colors.background_muted", "counter_text": "colors.text_secondary" }
+    },
+    "StatusPill": {
+      "radius": "radii.pill",
+      "padding": { "x": 14, "y": 6 },
+      "font": "tokens.typography.scale.body_sm",
+      "variants": {
+        "primary": { "background": "colors.secondary_soft", "text": "colors.secondary" },
+        "neutral": { "background": "colors.background_muted", "text": "colors.text_secondary" }
+      }
+    },
+    "Card": {
+      "background": "colors.background_surface",
+      "radius": "radii.lg",
+      "padding": "spacing.lg",
+      "shadow": "shadows.soft",
+      "divider_color": "colors.border_light",
+      "header": {
+        "title_typography": "tokens.typography.scale.h2",
+        "meta_typography": "tokens.typography.scale.label",
+        "gap": "spacing.sm"
+      },
+      "body_gap": "spacing.md"
+    },
+    "StatRow": {
+      "label_typography": "tokens.typography.scale.body_sm",
+      "label_color": "colors.text_muted",
+      "value_typography": "tokens.typography.scale.h2",
+      "value_color": "colors.text_primary",
+      "gap": "spacing.xs"
+    },
+    "ListItem": {
+      "padding_y": "spacing.sm",
+      "icon_size": 18,
+      "icon_background": "colors.background_muted",
+      "icon_radius": "radii.pill",
+      "primary_typography": "tokens.typography.scale.body_md",
+      "secondary_typography": "tokens.typography.scale.body_sm",
+      "divider_color": "colors.border_light"
+    },
+    "KPIHeader": {
+      "breadcrumb_typography": "tokens.typography.scale.body_sm",
+      "breadcrumb_color": "colors.text_muted",
+      "title_typography": "tokens.typography.scale.h1",
+      "padding_bottom": "spacing.lg"
+    },
+    "CompletionPill": {
+      "background": "colors.background_muted",
+      "radius": "radii.pill",
+      "padding": { "x": 16, "y": 8 },
+      "track_height": 6,
+      "track_radius": "radii.pill",
+      "fill_color": "colors.primary",
+      "label_typography": "tokens.typography.scale.body_sm",
+      "label_color": "colors.text_secondary"
+    },
+    "Tag": {
+      "radius": "radii.pill",
+      "padding": { "x": 10, "y": 4 },
+      "font": "tokens.typography.scale.body_sm",
+      "variants": {
+        "neutral": { "background": "colors.background_muted", "text": "colors.text_secondary" },
+        "primary": { "background": "colors.primary_soft", "text": "colors.text_primary" }
+      }
+    },
+    "IconButton": {
+      "shape": "circle",
+      "size": 32,
+      "icon_color": "colors.text_secondary",
+      "hover_background": "colors.background_muted"
+    },
+    "FooterSummary": {
+      "background": "colors.background_muted",
+      "radius": "radii.lg",
+      "padding": "spacing.md",
+      "typography": "tokens.typography.scale.body_sm",
+      "cta": "Button.primary"
+    }
+  },
+  "states_and_motion": {
+    "timing": { "fast": 120, "base": 180, "slow": 250 },
+    "easings": { "enter": "cubic-bezier(0.4, 0, 0.2, 1)", "exit": "cubic-bezier(0.4, 0, 1, 1)" },
+    "focus": { "outline": "0 0 0 2px rgba(116, 162, 255, 0.6)", "offset": 2 },
+    "elevation_hierarchy": {
+      "base_card": "shadows.soft",
+      "raised": "shadows.medium",
+      "modal": "0 30px 60px rgba(15, 23, 42, 0.25)"
+    }
+  },
+  "accessibility": {
+    "contrast_minimum": "WCAG AA for text >= 4.5:1 and AAA for body text when practical.",
+    "focus_visibility": "Every interactive element must render the focus outline described in states_and_motion.focus.",
+    "hit_area": "Buttons, pills, and icons require a 44x44px minimum touch target.",
+    "motion_reduce": "Honor prefers-reduced-motion by disabling elevation animation and opacity transitions.",
+    "screen_reader": [
+      "Use aria-current on active nav items in the sidebar.",
+      "Provide aria-live updates for ProgressBar values when they change asynchronously.",
+      "Avatars need alt text; overlapping groups include the total count in aria-label."
+    ]
+  },
+  "content_guidelines": {
+    "voice": "Short, action-oriented labels. Avoid jargon; prefer verbs such as Plan, Review, Share.",
+    "capitalization": "Sentence case for headings; Title Case only for main project titles.",
+    "numbers": "Use compact notation (for example 12.5k) except in financial cards where currency symbols are required.",
+    "dates": "Format dates as Nov 16, 2025."
+  },
+  "implementation_notes": {
+    "token_usage": "All new styles must reference tokens by key; never hardcode raw values outside this file.",
+    "extensibility": "When a new component is required, extend tokens first, then add a component spec with anatomy, style, and states in this file.",
+    "testing": "Snapshots should assert token references by checking CSS variables or data attributes.",
+    "hand_off": "When AI generates UI, include a summary referencing the sections used here for traceability."
+  }
+}

@@ -1,0 +1,406 @@
+import React, { useEffect, useState } from "react";
+import { ScrollSection } from "../components/ScrollSection.jsx";
+
+function TypingHeadline() {
+  const primary = "We host debates,";
+  const highlight = "but not the boring ones.";
+  const [index, setIndex] = useState(0);
+  const fullLength = primary.length + 1 + highlight.length; // +1 for space/newline
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((current) => {
+        if (current >= fullLength) return current;
+        return current + 1;
+      });
+    }, 40);
+
+    return () => clearInterval(interval);
+  }, [fullLength]);
+
+  const primaryVisible = primary.slice(0, Math.min(index, primary.length));
+  const highlightStartIndex = primary.length + 1;
+  const highlightChars =
+    index > highlightStartIndex ? index - highlightStartIndex : 0;
+  const highlightVisible =
+    highlightChars > 0 ? highlight.slice(0, highlightChars) : "";
+
+  return (
+    <h1
+      className="text-5xl sm:text-6xl lg:text-7xl leading-[1.1] font-bold tracking-tight"
+      aria-label={`${primary} ${highlight}`}
+    >
+      <span className="text-text-primary" aria-hidden="true">
+        {primaryVisible}
+      </span>
+      <br />
+      <span className="ds-accent" aria-hidden="true">
+        {highlightVisible}
+      </span>
+    </h1>
+  );
+}
+
+export function Home() {
+  return (
+    <div className="space-y-24 sm:space-y-32">
+      {/* Hero Section */}
+      <ScrollSection className="relative min-h-[85vh] flex items-center">
+        {/* Floating Images - positioned around hero with 3D animations */}
+        <div className="pointer-events-none absolute top-20 left-8 w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-0 opacity-90 floating-3d" style={{ animationDelay: '0s' }}>
+          <div className="w-full h-full bg-gradient-to-br from-brand-primarySoft via-brand-secondarySoft to-app-muted" />
+        </div>
+        <div className="pointer-events-none absolute top-32 right-12 w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-0 opacity-90 floating-3d" style={{ animationDelay: '1.5s' }}>
+          <div className="w-full h-full bg-gradient-to-br from-brand-secondarySoft via-brand-primarySoft to-app-muted" />
+        </div>
+        <div className="pointer-events-none absolute bottom-32 left-16 w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-0 opacity-85 floating-3d" style={{ animationDelay: '3s' }}>
+          <div className="w-full h-full bg-gradient-to-br from-app-muted via-brand-primarySoft to-brand-secondarySoft" />
+        </div>
+        <div className="pointer-events-none absolute bottom-20 right-20 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-0 opacity-80 floating-3d" style={{ animationDelay: '4.5s' }}>
+          <div className="w-full h-full bg-gradient-to-br from-brand-primarySoft via-app-muted to-brand-secondarySoft" />
+        </div>
+
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8">
+          {/* Announcement Banners */}
+          <div className="flex flex-wrap gap-3 mb-8">
+            <a
+              href="#"
+              className="smooth-hover inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 text-xs sm:text-sm text-text-primary hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md"
+            >
+              <span>Trovilly launched first event</span>
+              <span className="transition-transform duration-300 hover:translate-x-1">→</span>
+            </a>
+            <a
+              href="#"
+              className="smooth-hover inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200 text-xs sm:text-sm text-text-primary hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md"
+            >
+              <span>▶</span>
+              <span>Discover Trovilly</span>
+            </a>
+          </div>
+
+          {/* Main Hero Content */}
+          <div className="space-y-8 mb-12">
+            <TypingHeadline />
+            <p className="text-lg sm:text-xl text-text-secondary leading-relaxed max-w-2xl">
+              We host debates that feel alive – fun, meaningful, and accessible.
+              Whether you&apos;re a student, hobbyist, working professional, or
+              pro-arguer:{" "}
+              <span className="font-semibold text-brand-primaryStrong">
+                Debate means Trovilly.
+              </span>
+            </p>
+
+            {/* CTA Input Field Style */}
+            <div className="flex flex-col sm:flex-row gap-3 max-w-2xl">
+              <div className="flex-1 relative group">
+                <div className="absolute left-5 top-1/2 -translate-y-1/2 text-text-muted text-sm font-medium transition-colors duration-300 group-focus-within:text-brand-primary z-10 pointer-events-none">
+                  trovilly.com/
+                </div>
+                <input
+                  type="text"
+                  placeholder="yourname"
+                  className="w-full pl-[140px] pr-5 py-4 rounded-2xl border-2 border-gray-200 bg-white backdrop-blur-sm text-text-primary placeholder:text-text-muted/60 focus:outline-none focus:border-brand-primary focus:ring-4 focus:ring-brand-primary/10 transition-all duration-300 text-sm sm:text-base hover:border-brand-primary/60 shadow-sm hover:shadow-md"
+                />
+              </div>
+              <button className="btn-premium inline-flex items-center justify-center rounded-2xl px-8 py-4 text-sm sm:text-base font-semibold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg border border-transparent hover:border-white/20 whitespace-nowrap relative overflow-hidden min-w-[120px]">
+                <span className="relative z-10">Sign up</span>
+              </button>
+            </div>
+            <p className="text-sm text-text-muted mt-2">
+              Already have a Trovilly account?{" "}
+              <a href="#" className="text-brand-primary hover:text-brand-primaryStrong font-medium transition-colors duration-200 hover:underline">
+                Login
+              </a>
+            </p>
+          </div>
+
+          {/* Stats/Features */}
+          <div className="flex flex-wrap gap-8 sm:gap-12 pt-8 border-t border-gray-200">
+            <div className="flex flex-col gap-1">
+              <span className="text-xs uppercase tracking-wider text-text-muted">
+                Formats
+              </span>
+              <span className="text-base font-medium text-text-primary">
+                7+ creative styles
+              </span>
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="text-xs uppercase tracking-wider text-text-muted">
+                Debaters
+              </span>
+              <span className="text-base font-medium text-text-primary">
+                Global &amp; inclusive
+              </span>
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="text-xs uppercase tracking-wider text-text-muted">
+                Promise
+              </span>
+              <span className="text-base font-medium text-text-primary">
+                Fun, credible, bias-checked
+              </span>
+            </div>
+          </div>
+        </div>
+      </ScrollSection>
+
+      {/* Featured Event Card */}
+      <ScrollSection className="relative">
+        <div className="max-w-4xl mx-auto">
+          <div className="premium-card bg-white/90 backdrop-blur-xl rounded-3xl p-8 sm:p-10 border border-gray-200 shadow-lg">
+            <div className="flex items-center justify-between mb-6">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full text-xs uppercase tracking-wider bg-brand-secondarySoft text-brand-secondary font-medium">
+                Featured event
+              </span>
+              <button
+                type="button"
+                className="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-gray-100 transition-colors"
+                aria-label="More event options"
+              >
+                <span className="text-lg">•••</span>
+              </button>
+            </div>
+
+            <div className="mb-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">
+                Trovilly Global Grand Prix
+              </h2>
+              <p className="text-sm text-text-secondary">
+                Prototype preview · Details coming soon
+              </p>
+            </div>
+
+            <ul className="list-disc list-inside text-base text-text-secondary space-y-2 mb-6">
+              <li>30-day, league-style points table</li>
+              <li>Multiple surprise formats &amp; rounds</li>
+              <li>Deliberation, contradiction &amp; real discussion</li>
+              <li>Revive the inner debater (or arguer) in you</li>
+            </ul>
+
+            <div className="flex flex-wrap gap-3 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-sm">
+                <span className="uppercase tracking-wider text-text-muted text-xs">
+                  Mode
+                </span>
+                <span className="font-medium">Virtual · Global</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-50 text-sm">
+                <span className="uppercase tracking-wider text-text-muted text-xs">
+                  Level
+                </span>
+                <span className="font-medium">Beginner to Pro</span>
+              </div>
+            </div>
+
+            <button className="btn-premium w-full sm:w-auto inline-flex items-center justify-center rounded-2xl px-6 py-3 text-sm font-medium bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-md relative overflow-hidden">
+              <span className="relative z-10">Join now for free</span>
+            </button>
+            <p className="text-xs text-text-muted mt-3">
+              In the live version, this will link to the Devpost page.
+            </p>
+          </div>
+        </div>
+      </ScrollSection>
+
+      {/* Problems in the current debate ecosystem */}
+      <ScrollSection className="space-y-10">
+        <div className="space-y-6 max-w-4xl relative">
+          <p className="inline-flex px-4 py-1.5 rounded-full bg-brand-primary text-xs font-semibold tracking-wider uppercase text-white shadow-md">
+            What&apos;s broken right now
+          </p>
+          <div className="relative">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight relative z-10">
+              <span className="text-text-primary">Why debates stopped feeling </span>
+              <span className="ds-accent inline-block">fun</span>
+              <span className="text-text-primary">, </span>
+              <span className="ds-accent inline-block">fair</span>
+              <span className="text-text-primary">, and </span>
+              <span className="ds-accent inline-block">accessible</span>
+              <span className="text-text-primary">.</span>
+            </h2>
+            {/* Decorative gradient background */}
+            <div className="absolute -left-8 -top-8 w-32 h-32 bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 rounded-full blur-3xl -z-0" />
+            <div className="absolute -right-8 -bottom-8 w-40 h-40 bg-gradient-to-br from-brand-secondary/10 to-brand-primary/10 rounded-full blur-3xl -z-0" />
+          </div>
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+            These are the frictions we hear from students, hobbyists, working
+            professionals, and pro-arguers across the world.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              Irregularity &amp; inaccessibility
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              Debates? When and where? Events are scattered, hard to find, and
+              often locked behind institutions or geography.
+            </p>
+          </div>
+
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              "Trust issues"
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              Unethical competitions chasing profit over the spirit of debate.
+              No single, trusted organizer of quality debates for everyone
+              globally.
+            </p>
+          </div>
+
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              Lack of creativity &amp; inclusivity
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              Current systems focus on WSDCs, MUNs, and BPs. Debate feels
+              reserved for diplomatic prodigies, not people who argue for fun or
+              from different fields and fandoms.
+            </p>
+          </div>
+
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              Unfair judgement
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              No transparent system of checks and balances. Favouritism and
+              bias spoil the experience for everyone involved.
+            </p>
+          </div>
+
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm md:col-span-2 lg:col-span-1">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              No proper recognition
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              A digital certificate isn&apos;t enough. Debaters and
+              adjudicators rarely get proof of talent or personalised rewards
+              that actually help in the future.
+            </p>
+          </div>
+        </div>
+      </ScrollSection>
+
+      {/* Where Trovilly comes to play */}
+      <ScrollSection className="space-y-10">
+        <div className="space-y-6 max-w-4xl relative">
+          <p className="inline-flex px-4 py-1.5 rounded-full bg-brand-primary text-xs font-semibold tracking-wider uppercase text-white shadow-md">
+            Where Trovilly comes to play
+          </p>
+          <div className="relative">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight relative z-10">
+              <span className="text-text-primary">Built by </span>
+              <span className="ds-accent inline-block">debaters</span>
+              <span className="text-text-primary">, for people who </span>
+              <span className="ds-accent inline-block">refuse to stay silent</span>
+              <span className="text-text-primary">.</span>
+            </h2>
+            {/* Decorative gradient background */}
+            <div className="absolute -left-8 -top-8 w-32 h-32 bg-gradient-to-br from-brand-secondary/10 to-brand-primary/10 rounded-full blur-3xl -z-0" />
+            <div className="absolute -right-8 -bottom-8 w-40 h-40 bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 rounded-full blur-3xl -z-0" />
+          </div>
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed">
+            We&apos;re not just hosting more events – we&apos;re redesigning the
+            experience so debates feel energetic, fair, and genuinely rewarding.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              Makes debate fun again
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              Not your usual MUNs or WSDCs – but creative, energetic formats:
+              1v1s, region-specific leagues, fictional universes, and debates on
+              everything you can imagine. (Max Verstappen vs. Michael
+              Schumacher, anyone?)
+            </p>
+          </div>
+
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              Makes debate accessible &amp; global
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              Virtual, global, awesome, and inclusive. Debate is for everyone –
+              not just IR prodigies, but hobbyists, educationalists, and even
+              self-proclaimed arguers.
+            </p>
+          </div>
+
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              Redefines quality virtual debating
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              This isn&apos;t just another Zoom or Meet room. It&apos;s a
+              dedicated debate environment that captures the buzz of physical
+              tournaments – just 1000× more flexible.
+            </p>
+          </div>
+
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              No bias, pure results
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              Structured checks and balances on every decision. Outcomes are
+              re-reviewed, with systems that minimise human bias (and make sure
+              any &quot;bias&quot; is transparent and accountable).
+            </p>
+          </div>
+
+          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 shadow-sm md:col-span-2 lg:col-span-1">
+            <h3 className="text-lg font-semibold text-brand-primaryStrong mb-3">
+              Deserved recognition for all
+            </h3>
+            <p className="text-base text-text-secondary leading-relaxed">
+              Participants and adjudicators earn more than PDFs – think LORs,
+              recommendations, meaningful rewards, courses, and real feedback
+              that proves and grows your talent.
+            </p>
+          </div>
+        </div>
+      </ScrollSection>
+
+      {/* Adjudicator CTA */}
+      <ScrollSection>
+        <div className="premium-card bg-white/90 backdrop-blur-xl rounded-3xl p-8 sm:p-10 border border-gray-200 shadow-lg">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+            <div className="space-y-3 flex-1">
+              <p className="text-xs tracking-wider uppercase text-text-muted font-medium">
+                Become an adjudicator
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+                Think you&apos;ve got the skills to call the clash?
+              </h2>
+              <p className="text-base text-text-secondary leading-relaxed">
+                Put yourself out there and experience an action‑packed adjudicator
+                journey on a global stage. In the live site, this button will open a
+                Google Form to apply.
+              </p>
+              <p className="text-base font-semibold text-brand-primaryStrong">
+                Debate means Trovilly. We host debates, but not the boring ones.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 w-full md:w-auto">
+              <button className="btn-premium inline-flex items-center justify-center rounded-2xl px-6 py-3 text-sm font-medium bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-md relative overflow-hidden">
+                <span className="relative z-10">Fill adjudicator form (G‑Form soon)</span>
+              </button>
+              <span className="text-xs text-text-muted text-center md:text-left">
+                Placeholder – wire your actual form link when ready.
+              </span>
+            </div>
+          </div>
+        </div>
+      </ScrollSection>
+    </div>
+  );
+}
+
+
