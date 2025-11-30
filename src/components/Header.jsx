@@ -52,12 +52,12 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-        <div className="inline-flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-brand-secondary via-brand-primary to-brand-primaryStrong flex items-center justify-center overflow-hidden relative shadow-sm border-2 border-white hover:scale-110 transition-transform duration-300">
-            <span className="w-5 h-5 rounded-lg bg-white/95" />
+        <div className="inline-flex items-center gap-3">
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-secondary via-brand-primary to-brand-primaryStrong flex items-center justify-center overflow-hidden relative shadow-lg border-2 border-white hover:scale-110 transition-transform duration-300">
+            <span className="w-7 h-7 rounded-lg bg-white/95" />
           </div>
-          <span className="text-xl font-semibold text-text-primary">
-            Trovilly
+          <span className="text-2xl sm:text-3xl font-bold text-text-primary">
+            <span className="bg-gradient-to-r from-brand-primary to-brand-secondary bg-clip-text text-transparent">Trovilly</span>
           </span>
         </div>
 
@@ -128,10 +128,10 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <button className="hidden sm:inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium text-text-secondary hover:text-brand-primary transition-all duration-200 hover:scale-105">
+          <button className="hidden sm:inline-flex items-center justify-center rounded-full px-5 py-2.5 text-base font-semibold text-text-primary hover:text-brand-primary transition-all duration-200 hover:scale-105">
             Become an adjudicator
           </button>
-          <button className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-white/20 hover:scale-105 hover:-translate-y-0.5">
+          <button className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-md hover:shadow-lg transition-all duration-300 border border-transparent hover:border-white/20 hover:scale-105 hover:-translate-y-0.5">
             Join a debate
           </button>
         </div>
