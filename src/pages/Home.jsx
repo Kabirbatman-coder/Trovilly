@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ScrollSection } from "../components/ScrollSection.jsx";
 
 function TypingHeadline() {
@@ -46,20 +47,6 @@ export function Home() {
     <div className="space-y-32 sm:space-y-40">
       {/* Hero Section */}
       <ScrollSection className="relative min-h-[85vh] flex items-center">
-        {/* Floating Images - positioned around hero with 3D animations */}
-        <div className="pointer-events-none absolute top-20 left-8 w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-0 opacity-90 floating-3d" style={{ animationDelay: '0s' }}>
-          <div className="w-full h-full bg-gradient-to-br from-brand-primarySoft via-brand-secondarySoft to-app-muted" />
-        </div>
-        <div className="pointer-events-none absolute top-32 right-12 w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-0 opacity-90 floating-3d" style={{ animationDelay: '1.5s' }}>
-          <div className="w-full h-full bg-gradient-to-br from-brand-secondarySoft via-brand-primarySoft to-app-muted" />
-        </div>
-        <div className="pointer-events-none absolute bottom-32 left-16 w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-0 opacity-85 floating-3d" style={{ animationDelay: '3s' }}>
-          <div className="w-full h-full bg-gradient-to-br from-app-muted via-brand-primarySoft to-brand-secondarySoft" />
-        </div>
-        <div className="pointer-events-none absolute bottom-20 right-20 w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-xl border-4 border-white z-0 opacity-80 floating-3d" style={{ animationDelay: '4.5s' }}>
-          <div className="w-full h-full bg-gradient-to-br from-brand-primarySoft via-app-muted to-brand-secondarySoft" />
-        </div>
-
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 lg:px-8">
           {/* Dominant Trovilly Branding */}
           <div className="mb-12 text-center">
@@ -174,9 +161,9 @@ export function Home() {
               </div>
             </div>
 
-            <button className="btn-premium w-full sm:w-auto inline-flex items-center justify-center rounded-2xl px-8 py-4 text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl relative overflow-hidden transition-all duration-300">
-              <span className="relative z-10">Join now for free</span>
-            </button>
+            <Link to="/events" className="btn-premium w-full sm:w-auto inline-flex items-center justify-center rounded-2xl px-8 py-4 text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl relative overflow-hidden transition-all duration-300">
+              <span className="relative z-10">Coming soon, Join waitlist</span>
+            </Link>
           </div>
         </div>
       </ScrollSection>
@@ -367,7 +354,7 @@ export function Home() {
             </div>
             <div className="flex flex-col gap-3 w-full md:w-auto">
               <button className="btn-premium inline-flex items-center justify-center rounded-2xl px-8 py-4 text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl relative overflow-hidden transition-all duration-300">
-                <span className="relative z-10">Fill adjudicator form</span>
+                <span className="relative z-10">Fill adjudicator form (Coming soon)</span>
               </button>
             </div>
           </div>

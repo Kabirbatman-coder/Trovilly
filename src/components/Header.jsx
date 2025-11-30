@@ -129,7 +129,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <button className="hidden sm:inline-flex items-center justify-center rounded-full px-5 py-2.5 text-base font-semibold text-text-primary hover:text-brand-primary transition-all duration-200 hover:scale-105">
-            Become an adjudicator
+            Become an adjudicator (Coming soon)
           </button>
           <button className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-md hover:shadow-lg transition-all duration-300 border border-transparent hover:border-white/20 hover:scale-105 hover:-translate-y-0.5">
             Join a debate

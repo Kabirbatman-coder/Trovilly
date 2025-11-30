@@ -121,7 +121,7 @@ export function Events() {
             <li>Free to join</li>
           </ul>
           <button className="mt-auto inline-flex items-center justify-center rounded-2xl px-8 py-4 text-lg font-bold bg-brand-primary text-white shadow-lg hover:bg-brand-primaryStrong hover:shadow-xl transition-all">
-            Join waitlist
+            Coming soon, Join waitlist
           </button>
         </div>
       </div>
