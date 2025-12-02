@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { ScrollSection } from "../components/ScrollSection.jsx";
 
 function TypingHeadline() {
@@ -161,9 +160,9 @@ export function Home() {
               </div>
             </div>
 
-            <Link to="/events" className="btn-premium w-full sm:w-auto inline-flex items-center justify-center rounded-2xl px-8 py-4 text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl relative overflow-hidden transition-all duration-300">
+            <a href="https://form.typeform.com/to/HqB8aWbr" target="_blank" rel="noopener noreferrer" className="btn-premium w-full sm:w-auto inline-flex items-center justify-center rounded-2xl px-8 py-4 text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl relative overflow-hidden transition-all duration-300">
               <span className="relative z-10">Coming soon, Join waitlist</span>
-            </Link>
+            </a>
           </div>
         </div>
       </ScrollSection>
