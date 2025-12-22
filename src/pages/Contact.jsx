@@ -40,7 +40,7 @@ export function Contact() {
             General contact
           </h2>
           <div className="text-sm text-text-secondary space-y-1">
-            <div>EMAIL: trovilly@gmail.com</div>
+            <div>EMAIL: contacttrovilly@gmail.com</div>
             <div>Phone: 97550 08438</div>
             <div>Phone: 8871984913</div>
           </div>
@@ -80,10 +80,10 @@ export function Contact() {
             </a>
           </div>
 
-          {/* Kabir Khan */}
+          {/* Abdul Kabir Khan */}
           <div className="rounded-3xl bg-white/90 backdrop-blur-sm border-2 border-gray-300 shadow-md p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg">
             <h3 className="text-xl font-bold text-brand-primaryStrong mb-2">
-              Kabir Khan
+              Abdul Kabir Khan
             </h3>
             <p className="text-base text-text-secondary font-medium mb-3">
               Co-Founder: Tech and IT

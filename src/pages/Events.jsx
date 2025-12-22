@@ -15,7 +15,7 @@ export function Events() {
             <span className="ds-accent">Grand Prix</span>
           </h1>
           <p className="text-lg sm:text-xl text-text-primary font-medium max-w-2xl leading-relaxed">
-            30‑day global league. 7+ formats. Live points table.
+            4‑day global league. 7+ formats. Live points table.
           </p>
 
           <div className="flex flex-wrap gap-3 mt-4 text-xs sm:text-sm">
@@ -23,7 +23,7 @@ export function Events() {
               <span className="uppercase tracking-[0.16em] text-text-muted">
                 Duration
               </span>
-              <span className="font-medium">30 days</span>
+              <span className="font-medium">4 days</span>
             </div>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-app-surface border border-border-subtle">
               <span className="uppercase tracking-[0.16em] text-text-muted">
@@ -48,7 +48,7 @@ export function Events() {
           <div className="space-y-3">
             <div className="flex items-center justify-between text-xs text-text-secondary">
               <span>Day 1</span>
-              <span>Day 30</span>
+              <span>Day 4</span>
             </div>
             <div className="h-2.5 rounded-full bg-app-muted overflow-hidden">
               <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary animate-track-pulse" />
@@ -93,7 +93,7 @@ export function Events() {
             Format
           </h2>
           <ul className="text-base text-text-primary font-medium space-y-2 list-disc list-inside">
-            <li>30-day league</li>
+            <li>4-day league</li>
             <li>7+ debate formats</li>
             <li>Surprise formats included</li>
             <li>Full training &amp; mocks</li>
