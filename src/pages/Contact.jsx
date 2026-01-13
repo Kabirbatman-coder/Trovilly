@@ -30,9 +30,9 @@ export function Contact() {
             Think you&apos;ve got the skills to put yourself out there and
             experience an action‑packed adjudicator journey? 
           </p>
-          <button className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-brand-primary text-text-onPrimary shadow-soft hover:bg-brand-primaryStrong hover:shadow-medium transition-all">
-            Open adjudicator form (Coming soon)
-          </button>
+          <a href="https://tally.so/r/rjOOE2" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium bg-brand-primary text-text-onPrimary shadow-soft hover:bg-brand-primaryStrong hover:shadow-medium transition-all">
+            Open adjudicator form
+          </a>
         </div>
 
         <div className="rounded-2xl bg-app-surface border border-border-subtle shadow-soft p-5 space-y-3 transition-transform duration-200 hover:-translate-y-1 hover:shadow-medium">

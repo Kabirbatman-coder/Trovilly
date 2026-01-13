@@ -149,12 +149,12 @@ export function Header() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <button className="hidden sm:inline-flex items-center justify-center rounded-full px-5 py-2.5 text-base font-semibold text-text-primary hover:text-brand-primary transition-all duration-200 hover:scale-105">
-              Become an adjudicator (Coming soon)
-            </button>
-            <button className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-md hover:shadow-lg transition-all duration-300 border border-transparent hover:border-white/20 hover:scale-105 hover:-translate-y-0.5">
+            <a href="https://tally.so/r/rjOOE2" target="_blank" rel="noopener noreferrer" className="hidden sm:inline-flex items-center justify-center rounded-full px-5 py-2.5 text-base font-semibold text-text-primary hover:text-brand-primary transition-all duration-200 hover:scale-105">
+              Become an adjudicator
+            </a>
+            <a href="https://tally.so/r/rjOOE2" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-md hover:shadow-lg transition-all duration-300 border border-transparent hover:border-white/20 hover:scale-105 hover:-translate-y-0.5">
               Join a debate
-            </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -292,12 +292,12 @@ export function Header() {
 
           {/* Mobile Menu Footer with CTAs */}
           <div className="p-4 border-t border-gray-100 space-y-3">
-            <button className="w-full flex items-center justify-center rounded-2xl px-6 py-4 text-base font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg active:shadow-md transition-all duration-200">
+            <a href="https://tally.so/r/rjOOE2" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center rounded-2xl px-6 py-4 text-base font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg active:shadow-md transition-all duration-200">
               Join a debate
-            </button>
-            <button className="w-full flex items-center justify-center rounded-2xl px-6 py-4 text-base font-semibold text-text-primary bg-gray-50 active:bg-gray-100 transition-all duration-200">
+            </a>
+            <a href="https://tally.so/r/rjOOE2" target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center rounded-2xl px-6 py-4 text-base font-semibold text-text-primary bg-gray-50 active:bg-gray-100 transition-all duration-200">
               Become an adjudicator
-            </button>
+            </a>
           </div>
         </div>
       </div>

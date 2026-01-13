@@ -160,8 +160,8 @@ export function Home() {
               </div>
             </div>
 
-            <a href="https://form.typeform.com/to/HqB8aWbr" target="_blank" rel="noopener noreferrer" className="btn-premium w-full sm:w-auto inline-flex items-center justify-center rounded-xl sm:rounded-2xl px-6 sm:px-8 py-4 sm:py-4 text-base sm:text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl active:shadow-md relative overflow-hidden transition-all duration-300">
-              <span className="relative z-10">Coming soon, Join waitlist</span>
+            <a href="https://tally.so/r/rjOOE2" target="_blank" rel="noopener noreferrer" className="btn-premium w-full sm:w-auto inline-flex items-center justify-center rounded-xl sm:rounded-2xl px-6 sm:px-8 py-4 sm:py-4 text-base sm:text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl active:shadow-md relative overflow-hidden transition-all duration-300">
+              <span className="relative z-10">Join waitlist</span>
             </a>
           </div>
         </div>
@@ -352,9 +352,9 @@ export function Home() {
               </p>
             </div>
             <div className="flex flex-col gap-3 w-full md:w-auto">
-              <button className="btn-premium inline-flex items-center justify-center rounded-xl sm:rounded-2xl px-6 sm:px-8 py-4 text-base sm:text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl active:shadow-md relative overflow-hidden transition-all duration-300">
-                <span className="relative z-10">Fill adjudicator form (Coming soon)</span>
-              </button>
+              <a href="https://tally.so/r/rjOOE2" target="_blank" rel="noopener noreferrer" className="btn-premium inline-flex items-center justify-center rounded-xl sm:rounded-2xl px-6 sm:px-8 py-4 text-base sm:text-lg font-bold bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg hover:shadow-xl active:shadow-md relative overflow-hidden transition-all duration-300">
+                <span className="relative z-10">Fill adjudicator form</span>
+              </a>
             </div>
           </div>
         </div>
