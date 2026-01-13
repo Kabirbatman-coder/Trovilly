@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ScrollSection } from "../components/ScrollSection.jsx";
+import ChromaGrid from "../components/ChromaGrid.jsx";
 
 function TypingHeadline() {
   const primary = "We host debates,";
@@ -193,59 +194,47 @@ export function Home() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              Irregularity &amp; inaccessibility
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              Debates? When and where? Events are scattered, hard to find, and
-              often locked behind institutions or geography.
-            </p>
-          </div>
-
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              "Trust issues"
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              Unethical competitions chasing profit over the spirit of debate.
-              No single, trusted organizer of quality debates for everyone
-              globally.
-            </p>
-          </div>
-
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              Lack of creativity &amp; inclusivity
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              Current systems focus on WSDCs, MUNs, and BPs. Debate feels
-              reserved for diplomatic prodigies, not people who argue for fun or
-              from different fields and fandoms.
-            </p>
-          </div>
-
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              Unfair judgement
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              No transparent system of checks and balances. Favouritism and
-              bias spoil the experience for everyone involved.
-            </p>
-          </div>
-
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md md:col-span-2 lg:col-span-1">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              No proper recognition
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              A digital certificate isn&apos;t enough. Debaters and
-              adjudicators rarely get proof of talent or personalised rewards
-              that actually help in the future.
-            </p>
-          </div>
+        <div style={{ minHeight: '600px', position: 'relative' }}>
+          <ChromaGrid 
+            items={[
+              {
+                title: "Irregularity & inaccessibility",
+                subtitle: "Debates? When and where? Events are scattered, hard to find, and often locked behind institutions or geography.",
+                borderColor: "#0077c8",
+                gradient: "linear-gradient(145deg, #0077c8, #00b3d7)"
+              },
+              {
+                title: ""Trust issues"",
+                subtitle: "Unethical competitions chasing profit over the spirit of debate. No single, trusted organizer of quality debates for everyone globally.",
+                borderColor: "#00b3d7",
+                gradient: "linear-gradient(165deg, #00b3d7, #0077c8)"
+              },
+              {
+                title: "Lack of creativity & inclusivity",
+                subtitle: "Current systems focus on WSDCs, MUNs, and BPs. Debate feels reserved for diplomatic prodigies, not people who argue for fun or from different fields and fandoms.",
+                borderColor: "#4f46e5",
+                gradient: "linear-gradient(195deg, #4f46e5, #0077c8)"
+              },
+              {
+                title: "Unfair judgement",
+                subtitle: "No transparent system of checks and balances. Favouritism and bias spoil the experience for everyone involved.",
+                borderColor: "#0077c8",
+                gradient: "linear-gradient(225deg, #0077c8, #4f46e5)"
+              },
+              {
+                title: "No proper recognition",
+                subtitle: "A digital certificate isn't enough. Debaters and adjudicators rarely get proof of talent or personalised rewards that actually help in the future.",
+                borderColor: "#00b3d7",
+                gradient: "linear-gradient(135deg, #00b3d7, #0077c8)"
+              }
+            ]}
+            radius={250}
+            columns={3}
+            rows={2}
+            damping={0.45}
+            fadeOut={0.6}
+            ease="power3.out"
+          />
         </div>
       </ScrollSection>
 
@@ -273,62 +262,47 @@ export function Home() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              Makes debate fun again
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              Not your usual MUNs or WSDCs – but creative, energetic formats:
-              1v1s, region-specific leagues, fictional universes, and debates on
-              everything you can imagine. (Max Verstappen vs. Michael
-              Schumacher, anyone?)
-            </p>
-          </div>
-
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              Makes debate accessible &amp; global
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              Virtual, global, awesome, and inclusive. Debate is for everyone –
-              not just IR prodigies, but hobbyists, educationalists, and even
-              self-proclaimed arguers.
-            </p>
-          </div>
-
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              Redefines quality virtual debating
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              This isn&apos;t just another Zoom or Meet room. It&apos;s a
-              dedicated debate environment that captures the buzz of physical
-              tournaments – just 1000× more flexible.
-            </p>
-          </div>
-
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              No bias, pure results
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              Structured checks and balances on every decision. Outcomes are
-              re-reviewed, with systems that minimise human bias (and make sure
-              any &quot;bias&quot; is transparent and accountable).
-            </p>
-          </div>
-
-          <div className="premium-card bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-10 border-2 border-gray-300 shadow-md md:col-span-2 lg:col-span-1">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-brand-primaryStrong mb-2 sm:mb-4">
-              Deserved recognition for all
-            </h3>
-            <p className="text-base sm:text-lg text-text-primary font-medium leading-relaxed">
-              Participants and adjudicators earn more than PDFs – think LORs,
-              recommendations, meaningful rewards, courses, and real feedback
-              that proves and grows your talent.
-            </p>
-          </div>
+        <div style={{ minHeight: '600px', position: 'relative' }}>
+          <ChromaGrid 
+            items={[
+              {
+                title: "Makes debate fun again",
+                subtitle: "Not your usual MUNs or WSDCs – but creative, energetic formats: 1v1s, region-specific leagues, fictional universes, and debates on everything you can imagine. (Max Verstappen vs. Michael Schumacher, anyone?)",
+                borderColor: "#0077c8",
+                gradient: "linear-gradient(145deg, #0077c8, #00b3d7)"
+              },
+              {
+                title: "Makes debate accessible & global",
+                subtitle: "Virtual, global, awesome, and inclusive. Debate is for everyone – not just IR prodigies, but hobbyists, educationalists, and even self-proclaimed arguers.",
+                borderColor: "#00b3d7",
+                gradient: "linear-gradient(165deg, #00b3d7, #0077c8)"
+              },
+              {
+                title: "Redefines quality virtual debating",
+                subtitle: "This isn't just another Zoom or Meet room. It's a dedicated debate environment that captures the buzz of physical tournaments – just 1000× more flexible.",
+                borderColor: "#4f46e5",
+                gradient: "linear-gradient(195deg, #4f46e5, #0077c8)"
+              },
+              {
+                title: "No bias, pure results",
+                subtitle: "Structured checks and balances on every decision. Outcomes are re-reviewed, with systems that minimise human bias (and make sure any \"bias\" is transparent and accountable).",
+                borderColor: "#0077c8",
+                gradient: "linear-gradient(225deg, #0077c8, #4f46e5)"
+              },
+              {
+                title: "Deserved recognition for all",
+                subtitle: "Participants and adjudicators earn more than PDFs – think LORs, recommendations, meaningful rewards, courses, and real feedback that proves and grows your talent.",
+                borderColor: "#00b3d7",
+                gradient: "linear-gradient(135deg, #00b3d7, #0077c8)"
+              }
+            ]}
+            radius={250}
+            columns={3}
+            rows={2}
+            damping={0.45}
+            fadeOut={0.6}
+            ease="power3.out"
+          />
         </div>
       </ScrollSection>
 
