@@ -204,7 +204,7 @@ export function Home() {
                 gradient: "linear-gradient(145deg, #0077c8, #00b3d7)"
               },
               {
-                title: ""Trust issues"",
+                title: "Trust issues",
                 subtitle: "Unethical competitions chasing profit over the spirit of debate. No single, trusted organizer of quality debates for everyone globally.",
                 borderColor: "#00b3d7",
                 gradient: "linear-gradient(165deg, #00b3d7, #0077c8)"
